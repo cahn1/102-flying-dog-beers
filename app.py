@@ -7,6 +7,11 @@ import plotly.graph_objs as go
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
 ibu_values=[35, 60, 85, 75]
 abv_values=[5.4, 7.1, 9.2, 4.3]
+z=[[10, 10.625, 12.5, 15.625, 20],
+   [5.625, 6.25, 8.125, 11.25, 15.625],
+   [2.5, 3.125, 5., 8.125, 12.5],
+   [0.625, 1.25, 3.125, 6.25, 10.625],
+   [0, 0.625, 2.5, 5.625, 10]]
 color1='blue'
 color2='green'
 mytitle='Beer Comparison'
@@ -18,13 +23,15 @@ githublink='https://github.com/austinlasseter/flying-dog-beers'
 sourceurl='https://www.flyingdog.com/beers/'
 
 ########### Set up the chart
-bitterness = go.Bar(
+bitterness = go.Contour(
+    z=z,
     x=beers,
     y=ibu_values,
     name=label1,
     marker={'color':color1}
 )
-alcohol = go.Bar(
+alcohol = go.Contour(
+    z=z,
     x=beers,
     y=abv_values,
     name=label2,
