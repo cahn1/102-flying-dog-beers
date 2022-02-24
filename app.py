@@ -8,8 +8,8 @@ beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Double Dog IPA']
 ibu_values=[35, 60, 85, 75]
 abv_values=[5.4, 7.1, 9.2, 4.3]
 color1='blue'
-color2='orange'
-mytitle='Beer Sales Comparison'
+color2='green'
+mytitle='Beer Comparison'
 tabtitle='beer!'
 myheading='Flying Dog Beers'
 label1='IBU'
@@ -18,13 +18,13 @@ githublink='https://github.com/austinlasseter/flying-dog-beers'
 sourceurl='https://www.flyingdog.com/beers/'
 
 ########### Set up the chart
-bitterness = go.Contour(
+bitterness = go.Bar(
     x=beers,
     y=ibu_values,
     name=label1,
     marker={'color':color1}
 )
-alcohol = go.Contour(
+alcohol = go.Bar(
     x=beers,
     y=abv_values,
     name=label2,
@@ -56,7 +56,7 @@ app.layout = html.Div(children=[
     html.A('Code on Github', href=githublink),
     html.Br(),
     html.A('Data Source', href=sourceurl),
-    ]
+]
 )
 
 if __name__ == '__main__':
