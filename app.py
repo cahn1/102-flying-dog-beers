@@ -9,7 +9,7 @@ ibu_values=[35, 60, 85, 75]
 abv_values=[5.4, 7.1, 9.2, 4.3]
 color1='blue'
 color2='orange'
-mytitle='Beer Comparison'
+mytitle='Beer Sales Comparison'
 tabtitle='beer!'
 myheading='Flying Dog Beers'
 label1='IBU'
@@ -18,7 +18,7 @@ githublink='https://github.com/austinlasseter/flying-dog-beers'
 sourceurl='https://www.flyingdog.com/beers/'
 
 ########### Set up the chart
-bitterness = go.Line(
+bitterness = go.Bar(
     x=beers,
     y=ibu_values,
     name=label1,
@@ -32,7 +32,7 @@ alcohol = go.line(
 )
 
 beer_data = [bitterness, alcohol]
-beer_layout = go.Layout(
+beer_layout = go.Bar(
     barmode='group',
     title = mytitle
 )
